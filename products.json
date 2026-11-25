@@ -1,0 +1,22 @@
+[
+  {
+    "id": "molly-flower-100",
+    "name": "น้ำผึ้งดอกไม้",
+    "mood": "fresh",
+    "type": "spray",
+    "size": "100 ml",
+    "price": 150,
+    "image": "images/fresh.jpg",
+    "description": "น้ำผึ้งดอกไม้รวม กลิ่นหอมอ่อนละมุน รสชาติกลมกล่อม เหมาะกับทุกวัน"
+  },
+  {
+    "id": "molly-lychee-100",
+    "name": "น้ำผึ้งดอกลิ้นจี่",
+    "mood": "fresh",
+    "type": "spray",
+    "size": "100 ml",
+    "price": 150,
+    "image": "images/fresh.jpg",
+    "description": "น้ำผึ้งดอกลิ้นจี่ กลิ่นหอมเฉพาะตัว หวานสะอาด ท้ายรสนุ่มนวล"
+  }
+]

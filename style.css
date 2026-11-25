@@ -1,0 +1,302 @@
+/* ==========================================================
+   MOLLY HONEY — Premium minimal theme
+   ขาว · ครีม · เบจเข้ม · สีทองบรอนซ์อ่อนเป็นสีเน้น
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Thai:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500&display=swap");
+
+:root {
+  /* พื้นหลังและเนื้อหา */
+  --white: #ffffff;
+  --cream: #faf6ee;
+  --cream-deep: #f1e9da;
+  --beige: #d8cbb2;
+  --beige-dark: #8a7860;
+  --ink: #3a3027;
+  --ink-soft: #6b5e50;
+
+  /* สีเน้น: ทอง/บรอนซ์อ่อน */
+  --gold: #b08d57;
+  --gold-soft: #cdb286;
+  --gold-deep: #8f6f3d;
+
+  /* เส้นบางๆ สีเข้มนุ่มตา */
+  --line: rgba(58, 48, 39, 0.28);
+  --line-soft: rgba(58, 48, 39, 0.12);
+
+  /* สีของ mood — ใช้เป็นจุดเล็กๆ เท่านั้น */
+  --mood-fresh: #2f5d46;
+  --mood-sweet: #7a5a8c;
+  --mood-confident: #3f4f63;
+  --mood-romance: #c97b7b;
+
+  /* ฟอนต์ */
+  --font-display: "Cormorant Garamond", "Noto Serif Thai", Georgia, serif;
+  --font-body: "Noto Serif Thai", "Cormorant Garamond", Georgia, serif;
+  --font-ui: "Noto Sans Thai", "Helvetica Neue", Arial, sans-serif;
+
+  /* ระยะห่าง */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 7rem;
+
+  --container: 1120px;
+  --radius: 2px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.95;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 400; line-height: 1.15; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); }
+h3 { font-size: 1.4rem; }
+
+p { margin: 0 0 var(--space-3); max-width: 62ch; color: var(--ink-soft); }
+
+.lead { font-size: 1.1rem; color: var(--ink); }
+.small { font-size: 0.875rem; }
+.muted { color: var(--beige-dark); }
+.center { text-align: center; }
+.center p { margin-left: auto; margin-right: auto; }
+
+/* เส้นทองสั้นใต้หัวข้อ */
+.rule {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  margin: var(--space-3) 0;
+  background: var(--gold);
+  border: 0;
+}
+.center .rule { margin-left: auto; margin-right: auto; }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.section { padding: var(--space-6) 0; }
+.section--white { background: var(--white); }
+.section--cream-deep { background: var(--cream-deep); }
+.section--bordered { border-top: 1px solid var(--line-soft); }
+
+.section-head { margin-bottom: var(--space-5); }
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.split {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 246, 238, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+}
+
+.nav { display: flex; gap: var(--space-4); font-family: var(--font-ui); font-size: 0.9rem; }
+.nav a { color: var(--ink-soft); padding: 0.25rem 0; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.nav a:hover { color: var(--ink); border-bottom-color: var(--gold); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.95rem 2.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.btn:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+.btn--gold { border-color: var(--gold); color: var(--gold-deep); }
+.btn--gold:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
+
+.btn--block { display: block; width: 100%; text-align: center; }
+
+/* ---------- Product card ---------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  object-fit: cover;
+  background: var(--cream-deep);
+  margin-bottom: var(--space-3);
+}
+
+.card__title { font-size: 1.35rem; margin-bottom: var(--space-1); }
+.card__meta { font-family: var(--font-ui); font-size: 0.85rem; color: var(--beige-dark); margin-bottom: var(--space-2); }
+.card__desc { font-size: 0.95rem; flex: 1; }
+.card__price { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold-deep); margin: var(--space-2) 0 var(--space-3); }
+.card__price small { font-family: var(--font-ui); font-size: 0.8rem; color: var(--beige-dark); }
+
+/* ---------- Mood: จุดเล็กๆ เท่านั้น ไม่ทาพื้นหลัง ---------- */
+.mood-fresh    { --mood: var(--mood-fresh); }
+.mood-sweet    { --mood: var(--mood-sweet); }
+.mood-confident{ --mood: var(--mood-confident); }
+.mood-romance  { --mood: var(--mood-romance); }
+
+.mood-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background: var(--mood, var(--gold));
+  vertical-align: middle;
+}
+
+/* เส้นสั้นใต้หัวข้อที่แตะสี mood */
+.mood-rule {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin: var(--space-2) 0;
+  background: var(--mood, var(--gold));
+  border: 0;
+}
+
+/* ---------- Form (ใช้กับฟอร์มสั่งซื้อ) ---------- */
+.field { margin-bottom: var(--space-3); }
+
+.field label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+
+.field textarea { min-height: 7rem; resize: vertical; }
+.field input:focus,
+.field textarea:focus,
+.field select:focus { outline: none; border-color: var(--gold); }
+
+.form-message { font-family: var(--font-ui); font-size: 0.9rem; margin-top: var(--space-2); }
+.form-message--ok { color: var(--mood-fresh); }
+.form-message--error { color: #a14b4b; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: var(--space-5) 0;
+  background: var(--ink);
+  color: var(--beige);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+}
+.site-footer .brand { color: var(--cream); }
+.site-footer a:hover { color: var(--gold-soft); }
+
+/* ---------- Accessibility ---------- */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  :root { --space-5: 3rem; --space-6: 4.5rem; }
+  .split { grid-template-columns: 1fr; gap: var(--space-4); }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 0.975rem; }
+  .container { padding: 0 1.25rem; }
+  .site-header .container { min-height: 3.75rem; }
+  .brand { font-size: 1.1rem; letter-spacing: 0.16em; }
+  .nav { gap: var(--space-3); font-size: 0.8rem; }
+  .btn { width: 100%; text-align: center; }
+  .grid { grid-template-columns: 1fr; }
+}

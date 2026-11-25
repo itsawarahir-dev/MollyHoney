@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สินค้าทั้งหมด — MOLLY HONEY</title>
+  <meta name="description" content="น้ำผึ้งดอกไม้และน้ำผึ้งดอกลิ้นจี่ น้ำผึ้งแท้เกรดพรีเมียมจาก MOLLY HONEY">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะหน้าสินค้า */
+    #filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+    }
+    #filter-bar .btn {
+      width: auto;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    #filter-bar .btn.is-active {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    /* การ์ดไม่ยืดเต็มความกว้าง เมื่อมีสินค้าน้อยชิ้น */
+    #product-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 340px));
+      justify-content: start;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">MOLLY HONEY</a>
+      <nav class="nav" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html" aria-current="page">สินค้า</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <h1>สินค้าทั้งหมด</h1>
+        <span class="rule" aria-hidden="true"></span>
+        <p>น้ำผึ้งแท้เกรดพรีเมียม เลือกกลิ่นที่ใช่สำหรับคุณ</p>
+      </div>
+
+      <div id="filter-bar" role="group" aria-label="กรองสินค้าตามกลิ่น"></div>
+
+      <div id="product-list" class="grid"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container center">
+      <a class="brand" href="index.html">MOLLY HONEY</a>
+      <p class="small" style="margin-top: var(--space-2); color: var(--beige);">© 2026 MOLLY HONEY</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
